@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Enroll;
 use App\Models\Assignment;
+use App\Models\Annoucement;
 
 class InstructorController extends Controller
 {
@@ -61,6 +62,29 @@ class InstructorController extends Controller
             return response()->json([
                 'status' => "success",
                 'data' => $assignment
+            ]);
+        }
+
+        return response()->json([
+            'status' => "failed",
+            'data' =>'error'
+        ]);
+
+    }
+
+    //add new annoucement
+    function addAnnoucement(Request $request){
+
+        $annoucement= new Annoucement;
+
+        $annoucement->course_code=$request->ccode;
+        $annoucement->title=$request->title;
+        $annoucement->text=$request->text;
+        
+        if($annoucement->save()){
+            return response()->json([
+                'status' => "success",
+                'data' => $annoucement
             ]);
         }
 

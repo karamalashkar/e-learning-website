@@ -10,6 +10,7 @@ Route::group(['prefix'=>"v1"],function(){
     Route::post('/assign_instructor',[CourseController::class,'assignInstructor']);
     Route::post('/enroll_student',[InstructorController::class,'enrollStudent']);
     Route::post('/add_assignment',[InstructorController::class,'addAssignment']);
+    Route::post('/add_annoucement',[InstructorController::class,'addAnnoucement']);
     Route::post('/add',[UserController::class,'addUser']);
 });
 

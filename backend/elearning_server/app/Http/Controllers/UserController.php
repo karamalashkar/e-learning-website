@@ -16,6 +16,7 @@ class UserController extends Controller{
         $user->type=$request->type;
             
         $check_email=User::where('email','=',$request->email)->first();
+        
         if(!$check_email){
             if($user->save()){
                 return response()->json([

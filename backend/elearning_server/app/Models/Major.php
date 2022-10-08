@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class User extends Eloquent
+class Major extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'users';
+    protected $collection = 'majors';
     
     protected $fillable = [
-        'name', 'email', 'password', 'major', 'type'
+        'major_id', 'major_name'
     ];
 }

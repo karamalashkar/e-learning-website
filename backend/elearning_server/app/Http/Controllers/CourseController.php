@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Assign;
 
 class CourseController extends Controller{
     //add new course
@@ -28,20 +29,51 @@ class CourseController extends Controller{
 
             if($course->save()){
                 return response()->json([
-                    'success' => "success",
+                    'status' => "success",
                     'data' => $course
                 ]);
             }
 
             return response()->json([
-                'success' => "success",
+                'status' => "failed",
                 'data' =>'error'
             ]);
         }
         
         return response()->json([
-            'success' => "success",
+            'status' => "failed",
             'data' =>'Course already exist'
         ]);
     }
+
+    //assign instructor to course
+    function assignInstructor(Request $request){
+        $check_assign=Assign::where('course_code','=',$request->ccode)->first();
+
+        if(!$check_assign){
+            $assign= new Assign;
+
+            $assign->course_code=$request->ccode;
+            $assign->instructor_code=$request->icode;
+        
+            if($assign->save()){
+                return response()->json([
+                    'status' => "success",
+                    'data' => $assign
+                ]);
+            }
+
+            return response()->json([
+                'status' => "failed",
+                'data' =>'error'
+            ]);
+        }
+
+        return response()->json([
+            'status' => "failed",
+            'data' =>'course already assigned'
+        ]);
+
+    }
 }
+

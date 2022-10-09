@@ -5,27 +5,32 @@ import Bar from "./Components/Bar";
 import AddCourse from "./Components/AddCourse";
 import Mini from "./Components/MiniBar";
 import Add from "./Components/Add";
+import Box from "./Components/Box";
 import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 
 function App() {
 	return (
     <BrowserRouter>
-    <Navbar/>
 			<Routes>
-        <Route path='/' element={<>
+        <Route path='/course' element={<>
+            <Navbar/>
             <Sidebar/>
             <Bar/>
             <AddCourse/>
         </>} />
         
         <Route path='/instructor' element={<>
+            <Navbar/>
             <Mini text={'Instructor'}/>
             <Add title={'Instructor'}/>
+            <Box/>
         </>} />
 
         <Route path='/student' element={<>
+          <Navbar/> 
           <Mini text={'Student'}/>
           <Add title={'Student'}/>
+          <Box/>
         </>} />
 
       </Routes>

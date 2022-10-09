@@ -6,9 +6,11 @@ function bar({text}) {
 		<div className="bar">
 			<h1 className="bar-title">{text}</h1>
             <div>        
-                <button className="add">
-                    ADD
-                </button>
+            <select className="select menu">
+                <option value='1'>Buisness</option>
+                <option value='2'>Engineering</option>
+                <option value='3'>Pharmacy</option>
+            </select>
             </div>    
 		</div>
 	);

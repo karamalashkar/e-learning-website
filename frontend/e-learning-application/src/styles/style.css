@@ -95,6 +95,14 @@ nav {
     box-shadow: 0 5px 5px 5px #888888;
 }
 
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 55%;
+    height: 100px;
+}
+
 .card-info{
     margin: 10px;
 }
@@ -112,6 +120,11 @@ nav {
     padding: 15px;
     font-size: 20px;
 }
+
+.menu{
+    margin: 12px;
+}
+
 @media only screen and (max-width: 800px) {
 	header h1 {
 		font-size: 20px;

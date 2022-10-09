@@ -3,9 +3,9 @@ import "../styles/style.css";
 function add({title}) {
 	
 	return (
-		<div className="form flex">
-			<h1 className="bar-title">Add {title}</h1>
-            <div className="form-info flex">
+        <div className="sidebar flex">
+			<h1 className="title">Add {title}</h1>
+            <div className="flex">
                 <input type='text' placeholder="Name" className="input"></input>
                 <input type='text' placeholder="Email" className="input"></input>
                 <select className="input">
@@ -17,7 +17,7 @@ function add({title}) {
                 <button className="add">
                     ADD
                 </button>
-            </div>    
+            </div>
 		</div>
 	);
 }

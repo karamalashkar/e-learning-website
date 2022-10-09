@@ -6,9 +6,9 @@ function Navbar() {
 		<header>
 			<h1>E-learning</h1>
 			<nav>
-				<a href="/#">Courses</a>
-				<a href="/#">Instructors</a>
-				<a href="/#">Students</a>
+				<a href="/course">Courses</a>
+				<a href="/instructor">Instructors</a>
+				<a href="/student">Students</a>
                 <button className="logout">
                     Logout
                 </button>

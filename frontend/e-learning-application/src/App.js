@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Bar from "./Components/Bar";
 import AddCourse from "./Components/AddCourse";
+import Mini from "./Components/MiniBar";
 import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -19,11 +20,11 @@ function App() {
         </>} />
         
         <Route path='/instructor' element={<>
-            
+            <Mini text={'Instructor'}/>
         </>} />
 
         <Route path='/student' element={<>
-          hi student
+          <Mini text={'Student'}/>
         </>} />
 
       </Routes>

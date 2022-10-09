@@ -13,6 +13,8 @@ import AddAssignment from './Components/AddAssignment';
 import AddAnnoucement from './Components/AddAnnoucement';
 import AssignmentCard from './Components/AssignmentCard';
 import AnnoucementCard from './Components/AnnoucementCard';
+import Card from './Components/Card';
+import SubmitAssignment from './Components/SubmitAssignment';
 
 function App() {
 	return (
@@ -66,14 +68,20 @@ function App() {
 
         <Route path='/student_home' element={<>
           <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+          <Card/>
         </>} />
 
         <Route path='/student_assignment' element={<>
           <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+          <SubmitAssignment/>
+          <Mini text={'Assignments'}/>
+          <AssignmentCard/>
         </>} />
 
         <Route path='/student_annoucement' element={<>
           <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+          <Mini text={'Annoucements'}/>
+          <Box/>
         </>} />
 
       </Routes>

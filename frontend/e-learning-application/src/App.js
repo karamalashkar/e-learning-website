@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Bar from "./Components/Bar";
@@ -7,7 +8,7 @@ import Mini from "./Components/MiniBar";
 import Add from "./Components/Add";
 import Box from "./Components/Box";
 import Landing from "./Components/Landing";
-import { BrowserRouter ,Routes, Route} from 'react-router-dom';
+import Nav from './Components/Nav';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
         <Route path='/course' element={<>
             <Navbar/>
-            <Sidebar/>
+            <Sidebar text={'Unassigned Courses'}/>
             <Bar/>
             <AddCourse/>
         </>} />
@@ -37,6 +38,11 @@ function App() {
           <Mini text={'Students'}/>
           <Add title={'Student'}/>
           <Box/>
+        </>} />
+
+        <Route path='/instructor_home' element={<>
+          <Nav/>
+          <Sidebar text={'Unenrolled Students'}/>
         </>} />
 
       </Routes>

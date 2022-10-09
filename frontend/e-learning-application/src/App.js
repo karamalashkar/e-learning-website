@@ -10,7 +10,6 @@ import Box from "./Components/Box";
 import Landing from "./Components/Landing";
 import Nav from './Components/Nav';
 
-
 function App() {
 	return (
     <BrowserRouter>
@@ -41,8 +40,22 @@ function App() {
         </>} />
 
         <Route path='/instructor_home' element={<>
-          <Nav/>
+          <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
           <Sidebar text={'Unenrolled Students'}/>
+          <Mini text={'Home'}/>
+          <Box/>
+        </>} />
+
+        <Route path='/instructor_assignment' element={<>
+          <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
+          <Mini text={'Home'}/>
+          <Box/>
+        </>} />
+
+        <Route path='/instructor_annoucement' element={<>
+          <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
+          <Mini text={'Home'}/>
+          <Box/>
         </>} />
 
       </Routes>

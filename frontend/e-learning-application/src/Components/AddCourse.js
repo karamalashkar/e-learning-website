@@ -10,7 +10,8 @@ function addCourse() {
                 <input type='text' placeholder="Course Name" className="input"></input>
                 <input type='text' placeholder="Time" className="input"></input>
                 <input type='file' className="input"></input>
-                <select className="input">   
+                <select className="input"> 
+                    <option value="">Major</option>  
                     <option value='1'>Buisness</option>
                     <option value='2'>Engineering</option>
                     <option value='3'>Pharmacy</option>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Enroll;
 use App\Models\Assignment;
 use App\Models\Annoucement;
+use App\Models\User;
 
 class InstructorController extends Controller
 {
@@ -93,6 +94,23 @@ class InstructorController extends Controller
             'data' =>'error'
         ]);
 
+    }
+
+    //get instructors grouped by major
+    function getAllInstructors($major){
+        $instructor=User::where('type','=','2')->where('major','=',$major)->get();
+
+        if($instructor){
+            return response()->json([
+                'status'=>'success',
+                'data', $instructor
+            ]);
+        }
+
+        return response()->json([
+            'status'=>'failed',
+            'data'=>'error'
+        ]);
     }
 
 }

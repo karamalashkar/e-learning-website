@@ -21,14 +21,14 @@ function App() {
         
         <Route path='/instructor' element={<>
             <Navbar/>
-            <Mini text={'Instructor'}/>
+            <Mini text={'Instructors'}/>
             <Add title={'Instructor'}/>
             <Box/>
         </>} />
 
         <Route path='/student' element={<>
           <Navbar/> 
-          <Mini text={'Student'}/>
+          <Mini text={'Students'}/>
           <Add title={'Student'}/>
           <Box/>
         </>} />

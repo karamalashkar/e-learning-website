@@ -95,5 +95,24 @@ class CourseController extends Controller{
         ]);
         
     }
+
+    //get assigned courses
+    function getAssignedCourses($major){
+        
+        $course=Course::where('major','=',$major)->where('assigned','=','1')->get();
+
+        if($course){
+            return response()->json([
+                'status'=>'Success',
+                'data'=>$course
+            ]);
+        }
+
+        return response()->json([
+            'status'=>'failed',
+            'data'=>'error'
+        ]);
+        
+    }
 }
 

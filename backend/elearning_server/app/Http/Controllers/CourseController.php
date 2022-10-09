@@ -26,6 +26,7 @@ class CourseController extends Controller{
             $course->major=$request->major;
             $course->time=$request->time;
             $course->image=$imageName;
+            $course->assigned=$request->assigned;
 
             if($course->save()){
                 return response()->json([
@@ -74,6 +75,25 @@ class CourseController extends Controller{
             'data' =>'course already assigned'
         ]);
 
+    }
+
+    //get unassigned courses grouped by major
+    function getUnassignedCourses($major){
+        
+        $course=Course::where('major','=',$major)->where('assigned','=','0')->get();
+
+        if($course){
+            return response()->json([
+                'status'=>'Success',
+                'data'=>$course
+            ]);
+        }
+
+        return response()->json([
+            'status'=>'failed',
+            'data'=>'error'
+        ]);
+        
     }
 }
 

@@ -9,6 +9,7 @@ import Add from "./Components/Add";
 import Box from "./Components/Box";
 import Landing from "./Components/Landing";
 import Nav from './Components/Nav';
+import AddAssignment from './Components/AddAssignment';
 
 function App() {
 	return (
@@ -48,14 +49,13 @@ function App() {
 
         <Route path='/instructor_assignment' element={<>
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
-          <Mini text={'Home'}/>
-          <Box/>
+          <Mini text={'Assignments'}/>
+          <AddAssignment title={'Assignment'}/>            
         </>} />
 
         <Route path='/instructor_annoucement' element={<>
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
-          <Mini text={'Home'}/>
-          <Box/>
+          <Mini text={'Announcements'}/>
         </>} />
 
       </Routes>

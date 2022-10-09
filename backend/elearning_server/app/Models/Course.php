@@ -12,4 +12,5 @@ class Course extends Eloquent{
     protected $fillable = [
         'code', 'name', 'major', 'time', 'image', 'assigned'
     ];
+
 }

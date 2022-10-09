@@ -15,6 +15,7 @@ Route::group(['prefix'=>"v1"],function(){
     Route::post('/add_assignment',[InstructorController::class,'addAssignment']);
     Route::post('/add_annoucement',[InstructorController::class,'addAnnoucement']);
     Route::post('/submit_assignment',[StudentController::class,'submitAssignment']);
+    Route::get('/students/{major}',[StudentController::class,'getAllStudents']);
     Route::post('/add',[UserController::class,'addUser']);
 });
 

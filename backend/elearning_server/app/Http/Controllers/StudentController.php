@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Submit;
+use App\Models\User;
 
 class StudentController extends Controller{
     //submit assignment api
@@ -42,6 +43,23 @@ class StudentController extends Controller{
         return response()->json([
             'status' => "failed",
             'data' =>'Already Submitted'
+        ]);
+    }
+
+    //get students grouped by major
+    function getAllStudents($major){
+        $students=User::where('type','=','3')->where('major','=',$major)->get();
+
+        if($students){
+            return response()->json([
+                'status'=>'success',
+                'data', $students
+            ]);
+        }
+
+        return response()->json([
+            'status'=>'failed',
+            'data'=>'error'
         ]);
     }
 }

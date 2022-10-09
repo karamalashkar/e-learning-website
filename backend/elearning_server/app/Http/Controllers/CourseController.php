@@ -99,7 +99,9 @@ class CourseController extends Controller{
     //get assigned courses
     function getAssignedCourses($major){
         
-        $course=Course::where('major','=',$major)->where('assigned','=','1')->get();
+        //$course=Course::where('major','=',$major)->where('assigned','=','1')->get();
+
+        $course=Course::find('major','=',$major)->Assigned;
 
         if($course){
             return response()->json([
@@ -114,5 +116,7 @@ class CourseController extends Controller{
         ]);
         
     }
+
+    
 }
 

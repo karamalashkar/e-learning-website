@@ -7,6 +7,11 @@
 	font-family: "Titillium Web", sans-serif;
 }
 
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
 header {
 	display: flex;
 	align-items: center;
@@ -44,6 +49,20 @@ nav {
 	display: flex;
 	align-items: center;
 }
+
+.sidebar{
+    width: 30%;
+    max-height: 650px;
+    overflow-y: auto;
+    float: right;
+    box-shadow: 0 5px 5px 5px #888888;
+}
+
+.title{
+    padding: 10px 0;
+    text-align: center;
+}
+
 
 @media only screen and (max-width: 800px) {
 	header h1 {

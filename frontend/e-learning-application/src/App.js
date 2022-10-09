@@ -12,6 +12,7 @@ import Nav from './Components/Nav';
 import AddAssignment from './Components/AddAssignment';
 import AddAnnoucement from './Components/AddAnnoucement';
 import AssignmentCard from './Components/AssignmentCard';
+import AnnoucementCard from './Components/AnnoucementCard';
 
 function App() {
 	return (
@@ -60,6 +61,7 @@ function App() {
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
           <AddAnnoucement/>
           <Mini text={'Announcements'}/>
+          <AnnoucementCard/>
         </>} />
 
       </Routes>

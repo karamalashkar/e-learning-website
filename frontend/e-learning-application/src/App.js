@@ -10,6 +10,7 @@ import Box from "./Components/Box";
 import Landing from "./Components/Landing";
 import Nav from './Components/Nav';
 import AddAssignment from './Components/AddAssignment';
+import AddAnnoucement from './Components/AddAnnoucement';
 
 function App() {
 	return (
@@ -28,15 +29,15 @@ function App() {
         
         <Route path='/instructor' element={<>
             <Navbar/>
-            <Mini text={'Instructors'}/>
             <Add title={'Instructor'}/>
+            <Mini text={'Instructors'}/>
             <Box/>
         </>} />
 
         <Route path='/student' element={<>
           <Navbar/> 
-          <Mini text={'Students'}/>
           <Add title={'Student'}/>
+          <Mini text={'Students'}/>
           <Box/>
         </>} />
 
@@ -49,12 +50,13 @@ function App() {
 
         <Route path='/instructor_assignment' element={<>
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
-          <Mini text={'Assignments'}/>
-          <AddAssignment title={'Assignment'}/>            
+          <AddAssignment title={'Assignment'}/>
+          <Mini text={'Assignments'}/>            
         </>} />
 
         <Route path='/instructor_annoucement' element={<>
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
+          <AddAnnoucement/>
           <Mini text={'Announcements'}/>
         </>} />
 

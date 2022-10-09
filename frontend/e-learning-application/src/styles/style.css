@@ -55,6 +55,7 @@ nav {
     max-height: 650px;
     overflow-y: auto;
     float: right;
+    position: sticky;
     box-shadow: 0 5px 5px 5px #888888;
 }
 
@@ -84,6 +85,17 @@ nav {
 .select{
     padding: 12px;
     font-size: 16px;
+}
+
+.card{
+    width: 20%;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 5px #888888;
+}
+
+.card-info{
+    margin: 10px;
 }
 
 @media only screen and (max-width: 800px) {

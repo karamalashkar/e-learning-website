@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Bar from "./Components/Bar";
+import Card from "./Components/Card";
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 			<Navbar/>
       <Sidebar/>
       <Bar/>
+      <Card/>
 		</React.Fragment>
 	);
 }

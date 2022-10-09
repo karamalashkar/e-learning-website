@@ -8,7 +8,7 @@ function addAnnoucement() {
             <div className="flex">
                 <input type='text' placeholder="Title" className="input annoucement"></input>
                 <textarea className="input annoucement" placeholder="Info"></textarea>
-                <button className="add">
+                <button className="add btn">
                     ADD
                 </button>
             </div>

@@ -14,7 +14,7 @@ function add({title}) {
                     <option value='2'>Engineering</option>
                     <option value='3'>Pharmacy</option>
                 </select>
-                <button className="add">
+                <button className="add btn">
                     ADD
                 </button>
             </div>

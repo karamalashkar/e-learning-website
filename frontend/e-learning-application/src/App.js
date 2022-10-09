@@ -11,6 +11,7 @@ import Landing from "./Components/Landing";
 import Nav from './Components/Nav';
 import AddAssignment from './Components/AddAssignment';
 import AddAnnoucement from './Components/AddAnnoucement';
+import AssignmentCard from './Components/AssignmentCard';
 
 function App() {
 	return (
@@ -51,7 +52,8 @@ function App() {
         <Route path='/instructor_assignment' element={<>
           <Nav link={'instructor_home'} link1={'instructor_assignment'} link2={'instructor_annoucement'}/>
           <AddAssignment title={'Assignment'}/>
-          <Mini text={'Assignments'}/>            
+          <Mini text={'Assignments'}/>
+          <AssignmentCard/>            
         </>} />
 
         <Route path='/instructor_annoucement' element={<>

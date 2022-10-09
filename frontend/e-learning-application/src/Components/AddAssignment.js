@@ -10,7 +10,7 @@ function addAssignment({title}) {
                 <textarea className="input" placeholder="Info"></textarea>
                 <input type='date' placeholder="Due" className="input"></input>
                 <input type='file' placeholder="Due" className="input"></input>
-                <button className="add">
+                <button className="add btn">
                     ADD
                 </button>
             </div>

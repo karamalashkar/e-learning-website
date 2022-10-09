@@ -1,8 +1,13 @@
-import "../styles/style.css";
+import React, {useState} from "react";
 
-function bar() {
-	
+import "../styles/style.css";
+import AddCourse from "./AddCourse";
+
+
+function Bar() {
+	const[isOpen,setIsOpen]=useState(false)
 	return (
+        <>
 		<div className="bar">
 			<h1 className="bar-title">Courses</h1>
             <div>
@@ -11,12 +16,16 @@ function bar() {
                     <option value='2'>Engineering</option>
                     <option value='3'>Pharmacy</option>
                 </select>        
-                <button className="add">
+                <button className="add" onClick={()=>setIsOpen(true)}>
                     ADD
                 </button>
             </div>    
 		</div>
+        <AddCourse open={isOpen} onClose={()=>setIsOpen(false)}>
+
+        </AddCourse>
+        </>
 	);
 }
 
-export default bar;
+export default Bar;

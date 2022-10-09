@@ -1,9 +1,15 @@
+import React from "react";
 import "../styles/style.css";
 
-function addCourse() {
-	
+function addCourse({open,onClose}) {
+	if(!open){
+        return null
+    }
 	return (
 		<div className="form flex">
+            <button className="close" onClick={onClose}>
+                    x
+            </button>
 			<h1 className="bar-title">Add Course</h1>
             <div className="form-info flex">
                 <input type='text' placeholder="Course Code" className="input"></input>

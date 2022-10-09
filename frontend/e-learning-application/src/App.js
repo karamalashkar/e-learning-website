@@ -6,12 +6,18 @@ import AddCourse from "./Components/AddCourse";
 import Mini from "./Components/MiniBar";
 import Add from "./Components/Add";
 import Box from "./Components/Box";
+import Landing from "./Components/Landing";
 import { BrowserRouter ,Routes, Route} from 'react-router-dom';
+
 
 function App() {
 	return (
     <BrowserRouter>
 			<Routes>
+      <Route path='/' element={<>
+          <Landing/>
+      </>} />
+
         <Route path='/course' element={<>
             <Navbar/>
             <Sidebar/>

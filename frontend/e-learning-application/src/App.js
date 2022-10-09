@@ -64,6 +64,18 @@ function App() {
           <AnnoucementCard/>
         </>} />
 
+        <Route path='/student_home' element={<>
+          <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+        </>} />
+
+        <Route path='/student_assignment' element={<>
+          <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+        </>} />
+
+        <Route path='/student_annoucement' element={<>
+          <Nav link={'student_home'} link1={'student_assignment'} link2={'student_annoucement'}/>
+        </>} />
+
       </Routes>
     </BrowserRouter>
   );

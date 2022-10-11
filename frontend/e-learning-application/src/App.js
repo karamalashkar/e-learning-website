@@ -4,7 +4,6 @@ import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Bar from "./Components/Bar";
-import AddCourse from "./Components/AddCourse";
 import Mini from "./Components/MiniBar";
 import Add from "./Components/Add";
 import Box from "./Components/Box";
@@ -30,7 +29,6 @@ function App() {
             <Navbar/>
             <Sidebar text={'Unassigned Courses'}/>
             <Bar/>
-            <AddCourse/>
         </>} />
         
         <Route path='/instructor' element={<>

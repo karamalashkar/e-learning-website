@@ -11,24 +11,24 @@ function AddCourse({open,onClose}) {
     const [major, setMajor] = useState('')
     //add new course
     const onSubmit = async (e) => {
-    e.preventDefault()
-    if(!code || !course || !time || !image || !major){
-        alert('Fill in info');
-        return;
-    }
+      e.preventDefault()
+      if(!code || !course || !time || !image || !major){
+          alert('Fill in info');
+          return;
+      }
 
-    const post = { code, 'name': course, time, image, major }
-    try {
-      await axios.post('http://127.0.0.1:8000/api/v1/add_course', post)
-    } catch (e) {
-      alert(e)
+      const post = { code, 'name': course, time, image, major }
+      try {
+        await axios.post('http://127.0.0.1:8000/api/v1/add_course', post)
+      } catch (e) {
+        alert(e)
+      }
+      setCode("");
+      setCourse("");
+      setTime("");
+      setImage("");
+      setMajor("");
     }
-    setCode("");
-    setCourse("");
-    setTime("");
-    setImage("");
-    setMajor("");
-  }
 
     if(!open){
         return null

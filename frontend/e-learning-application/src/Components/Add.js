@@ -22,7 +22,6 @@ function Add({title}) {
         type='3';
     }
     
-    console.log(type);
     const post = { name:user_name, email, major, type}
     try {
       const res = await axios.post('http://127.0.0.1:8000/api/v1/add', post)
@@ -47,7 +46,7 @@ function Add({title}) {
                     setName(event.target.value)
                   }}
                   value={user_name}></input>
-                <input type='text'
+                <input type='email'
                 placeholder="Email"
                 className="input"
                 onChange={(event) => {

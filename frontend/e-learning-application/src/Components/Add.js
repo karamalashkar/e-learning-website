@@ -24,8 +24,7 @@ function Add({title}) {
     
     const post = { name:user_name, email, major, type}
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/v1/add', post)
-      console.log(res.data)
+      await axios.post('http://127.0.0.1:8000/api/v1/add', post)
     } catch (e) {
       alert(e)
     }

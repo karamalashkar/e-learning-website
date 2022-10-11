@@ -19,8 +19,7 @@ function AddCourse({open,onClose}) {
 
     const post = { code, 'name': course, time, image, major }
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/v1/add_course', post)
-      console.log(res.data)
+      await axios.post('http://127.0.0.1:8000/api/v1/add_course', post)
     } catch (e) {
       alert(e)
     }

@@ -27,7 +27,7 @@ function Landing() {
             else if(type=='2'){
                 navigate("/instructor_home");
             }
-            else if(type=='3'){
+            else{
                 navigate("/student_home");
             }
             

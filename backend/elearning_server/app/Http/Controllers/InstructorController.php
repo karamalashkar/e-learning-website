@@ -102,7 +102,7 @@ class InstructorController extends Controller
         if($instructor){
             return response()->json([
                 'status'=>'success',
-                'data', $instructor
+                'data'=> $instructor
             ]);
         }
 

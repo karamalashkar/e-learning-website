@@ -53,7 +53,7 @@ class StudentController extends Controller{
         if($students){
             return response()->json([
                 'status'=>'success',
-                'data', $students
+                'data'=> $students
             ]);
         }
 

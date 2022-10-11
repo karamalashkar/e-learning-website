@@ -14,13 +14,13 @@ class CourseController extends Controller{
         if(!$check_course){
             $course= new Course;
             
-            $base64Image = explode(";base64,", $request->image);
+            /*$base64Image = explode(";base64,", $request->image);
             $explodeImage = explode("image/", $base64Image[0]);
             $imageType = $explodeImage[1];
             $image_base64 = base64_decode($base64Image[1]);
             $imageName = $request->code.'.'.'png';
             \File::put(public_path(). '/images/' . $imageName, base64_decode($base64Image[1]));
-
+*/
             $course->code=$request->code;
             $course->name=$request->name;
             $course->major=$request->major;

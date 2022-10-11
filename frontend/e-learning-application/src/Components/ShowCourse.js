@@ -1,13 +1,18 @@
-import React, {useState,useEffect} from "react";
-import axios from "axios";
+import React from "react";
 import "../styles/style.css";
 import Card from "./Card";
 
-function ShowCourse() {
-
-	return (
-        <div className="show">
-                
+function ShowCourse({courses}) {
+        return (
+                <div className="show">
+                {courses.map((course) => {
+                return (
+                <Card
+                title={course.title}
+                name={course.name}
+                time={course.time}/>
+                );
+                })}
         </div>
 	);
 }

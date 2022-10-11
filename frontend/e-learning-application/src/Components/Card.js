@@ -1,15 +1,15 @@
 import "../styles/style.css";
 
-function Card() {
+function Card({image, title, name,instructor,time}) {
 	
 	return (
 		<div className="card flex">
             <img src='logo192.png'></img>
             <div className="card-info">
-                <h1>CENG400</h1>
-                <h2>Computer</h2>
-                <h2>Dr Ali Bazzi</h2>
-                <h3>MW 12:00</h3>
+                <h1>{title}</h1>
+                <h2>{name}</h2>
+                <h2></h2>
+                <h3>{time}</h3>
             </div>
 		</div> 
 	);

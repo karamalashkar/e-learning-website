@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import axios from 'axios';
 import "../styles/style.css";
 import AddCourse from "./AddCourse";
 import ShowCourse from "./ShowCourse";
@@ -7,7 +7,16 @@ import ShowCourse from "./ShowCourse";
 function Bar() {
 	const[isOpen,setIsOpen]=useState(false)
     const[isChanged,setIsChanged]=useState('')
+    const[courses,setCourse]=useState([])
     
+        const get=(isChanged)=>{
+            axios.get(`http://127.0.0.1:8000/api/v1/course/${isChanged}`).then(res=>{
+             console.log(res)
+            setCourse(res.data.data)
+        });
+        }
+        
+
 	return (
         <>
 		<div className="bar">
@@ -15,7 +24,7 @@ function Bar() {
             <div>
                 <select className="select"
                  onChange={(event) => {
-                setIsChanged(event.target.value)}}>
+                get(event.target.value)}}>
                 value={isChanged}
                     <option value=''>Major</option>
                     <option value='1'>Buisness</option>
@@ -30,8 +39,7 @@ function Bar() {
         <AddCourse open={isOpen} onClose={()=>setIsOpen(false)}>            
         </AddCourse>
         
-        <ShowCourse major={isChanged}>
-
+        <ShowCourse major={isChanged} courses={courses}>                     
         </ShowCourse>
         </>
     );

@@ -3,12 +3,12 @@ import axios from 'axios';
 import "../styles/style.css";
 import Show from "./Show";
 
-function MiniBar({text}) {
+function MiniBar({text,type}) {
     const[isChanged,setIsChanged]=useState('')
     const[users,setUser]=useState([])
 
     const getUser=(isChanged)=>{
-        axios.get(`http://127.0.0.1:8000/api/v1/instructors/${isChanged}`).then(res=>{
+        axios.get(`http://127.0.0.1:8000/api/v1/${type}/${isChanged}`).then(res=>{
          setUser(res.data.data);
         });
     }

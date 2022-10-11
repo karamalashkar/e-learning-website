@@ -34,13 +34,15 @@ function App() {
         <Route path='/instructor' element={<>
             <Navbar/>
             <Add title={'Instructor'}/>
-            <Mini text={'Instructors'}/>
+            <Mini text={'Instructors'}
+            type={'instructors'}/>
         </>} />
 
         <Route path='/student' element={<>
           <Navbar/> 
           <Add title={'Student'}/>
-          <Mini text={'Students'}/>
+          <Mini text={'Students'}
+          type={'students'}/>
         </>} />
 
         <Route path='/instructor_home' element={<>

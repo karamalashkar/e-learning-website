@@ -35,14 +35,12 @@ function App() {
             <Navbar/>
             <Add title={'Instructor'}/>
             <Mini text={'Instructors'}/>
-            <Box/>
         </>} />
 
         <Route path='/student' element={<>
           <Navbar/> 
           <Add title={'Student'}/>
           <Mini text={'Students'}/>
-          <Box/>
         </>} />
 
         <Route path='/instructor_home' element={<>

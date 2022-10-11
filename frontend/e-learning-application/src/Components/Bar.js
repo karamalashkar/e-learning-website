@@ -11,9 +11,8 @@ function Bar() {
     
         const get=(isChanged)=>{
             axios.get(`http://127.0.0.1:8000/api/v1/course/${isChanged}`).then(res=>{
-             console.log(res)
             setCourse(res.data.data)
-        });
+            });
         }
         
 
@@ -39,7 +38,7 @@ function Bar() {
         <AddCourse open={isOpen} onClose={()=>setIsOpen(false)}>            
         </AddCourse>
         
-        <ShowCourse major={isChanged} courses={courses}>                     
+        <ShowCourse courses={courses}>                     
         </ShowCourse>
         </>
     );

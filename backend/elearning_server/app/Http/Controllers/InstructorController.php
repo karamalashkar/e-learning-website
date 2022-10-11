@@ -50,13 +50,12 @@ class InstructorController extends Controller
         $imageName = $request->ccode.'_'.$request->title.'.png';
         \File::put(public_path(). '/assignments/' . $imageName, base64_decode($base64Image[1]));
         
-        
         $assignment= new Assignment;
 
         $assignment->course_code=$request->ccode;
         $assignment->title=$request->title;
         $assignment->body=$request->body;
-        $assignment->attachement=$imageName;
+        $assignment->attachement=$request->image;
         $assignment->due=$request->due;
         
         if($assignment->save()){

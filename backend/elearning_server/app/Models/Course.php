@@ -10,7 +10,7 @@ class Course extends Eloquent{
     protected $collection = 'courses';
     
     protected $fillable = [
-        'code', 'name', 'major', 'time', 'image', 'assigned'
+        'code', 'name', 'major', 'time', 'image'
     ];
 
 }

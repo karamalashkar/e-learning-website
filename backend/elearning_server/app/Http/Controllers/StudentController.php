@@ -19,13 +19,13 @@ class StudentController extends Controller{
             $image_base64 = base64_decode($base64Image[1]);
             $imageName = $request->sid.'_'.$request->aid.'.png';
             \File::put(public_path(). '/submit_assignments/' . $imageName, base64_decode($base64Image[1]));
-
+            
             $submit= new Submit;
 
             $submit->course_code=$request->ccode;
             $submit->student_id=$request->sid;
-            $submit->assignment_id=$request->aid;
-            $submit->attachement=$imageName;
+            $submit->assignment_title=$request->title;
+            $submit->attachement=$request->image;
             
             if($submit->save()){
                 return response()->json([

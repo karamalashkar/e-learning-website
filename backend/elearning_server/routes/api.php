@@ -9,6 +9,7 @@ use App\Http\Controllers\StudentController;
 Route::group(['prefix'=>"v1"],function(){
     Route::post('/add_course',[CourseController::class,'addCourse']);
     Route::post('/assign_instructor',[CourseController::class,'assignInstructor']);
+    Route::get('/course/{major}',[CourseController::class,'getCourses']);
     Route::get('/unassigned_course/{major}',[CourseController::class,'getUnassignedCourses']);
     Route::get('/assigned_course/{major}',[CourseController::class,'getAssignedCourses']);
     Route::post('/enroll_student',[InstructorController::class,'enrollStudent']);
@@ -18,6 +19,7 @@ Route::group(['prefix'=>"v1"],function(){
     Route::post('/submit_assignment',[StudentController::class,'submitAssignment']);
     Route::get('/students/{major}',[StudentController::class,'getAllStudents']);
     Route::post('/add',[UserController::class,'addUser']);
+    Route::post('/login',[UserController::class,'login']);
 });
 
 

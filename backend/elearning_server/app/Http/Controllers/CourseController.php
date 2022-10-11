@@ -25,7 +25,7 @@ class CourseController extends Controller{
             $course->name=$request->name;
             $course->major=$request->major;
             $course->time=$request->time;
-            $course->image=$imageName;
+            $course->image=$request->image;
             $course->assigned=$request->assigned;
 
             if($course->save()){
@@ -79,9 +79,9 @@ class CourseController extends Controller{
 
     //get unassigned courses grouped by major
     function getUnassignedCourses($major){
-        
-        $course=Course::where('major','=',$major)->where('assigned','=','0')->get();
-
+        $course=Course::where('major','=',$major)
+        ->join('assigned_instructors','courses.code','!=','assigned_instructors.course_code')
+        ->get();
         if($course){
             return response()->json([
                 'status'=>'Success',
@@ -98,10 +98,9 @@ class CourseController extends Controller{
 
     //get assigned courses
     function getAssignedCourses($major){
-        
-        //$course=Course::where('major','=',$major)->where('assigned','=','1')->get();
-
-        $course=Course::find('major','=',$major)->Assigned;
+        $course=Course::where('courses.major','=',$major)
+        ->join('assigned_instructors','courses.code','=','assigned_instructors.course_code')
+        ->get();
 
         if($course){
             return response()->json([
@@ -117,6 +116,23 @@ class CourseController extends Controller{
         
     }
 
-    
+    function getCourses($major){
+        $course=Course::where('major','=',$major)
+        ->get();
+
+        if($course){
+            return response()->json([
+                'status'=>'Success',
+                'data'=>$course
+            ]);
+        }
+
+        return response()->json([
+            'status'=>'failed',
+            'data'=>'error'
+        ]);
+        
+    }
+
 }
 
